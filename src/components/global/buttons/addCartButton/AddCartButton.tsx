@@ -1,21 +1,22 @@
 import { useEffect, useState } from "react";
 import { IButton } from "../../../../interfaces/components/button";
+import { IAddCartButton } from "./types";
 
 
-export function AddCartButton ({isEnabled, buttonClick}:IButton){
+export function AddCartButton ({isEnabled, addItemsCartButton,id, text }:IAddCartButton){
 
     const [textButton, useTextButton] = useState("")
 
     useEffect(()=>{
         if (isEnabled){
-            useTextButton("In cart")
+            useTextButton(text)
         } else {
-            useTextButton("Add to cart")
+            useTextButton(text)
         }
     },[isEnabled])
 
     return(
-        <button onClick={buttonClick}>
+        <button onClick={()=>{addItemsCartButton(id)}}>
             <h3>{textButton}</h3>
         </button>
     )

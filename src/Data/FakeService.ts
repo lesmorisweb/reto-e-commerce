@@ -66,6 +66,18 @@ export class Dish {
       return this._image;
    }
 
+   get dishName():string {
+      return this._dishName;
+   }
+
+   get inCart():boolean {
+      return this._inCart
+   }
+
+   get price():number {
+      return this._price
+   }
+
    get quantity(): number {
       return this._quantity;
    }

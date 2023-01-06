@@ -1,8 +1,5 @@
 export interface IDishMenu {
-    foodImg: string,
-    foodName: string,
-    price: number,
-    isInCart: boolean,
+    dish: Dish,
     onAddToCart: (id:number)=> void,
     onRemovFromCart: (id:number)=> void,
     
