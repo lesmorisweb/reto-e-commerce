@@ -7,9 +7,9 @@ export function IncreaseDecreaseButton ({buttonClick, direction, isEnabled}:IInr
 
     useEffect(()=>{
         if(direction==="add"){
-            setIcon("./assets/btn-increase.png")
+            setIcon("./assets/chevron-right-solid.svg")
         } else {
-            setIcon("./assets/btn-remove.png")
+            setIcon("./assets/chevron-left-solid.svg")
         }
     },[direction])
 
