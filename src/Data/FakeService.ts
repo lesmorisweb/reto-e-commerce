@@ -1,9 +1,13 @@
 export class Cart {
    private dishes: Dish[] = [
-      new Dish(0, "Spaghetti", false),
-      new Dish(1, "Meat", false),
-      new Dish(2, "Chicken", false),
-      new Dish(3, "Beef", false),
+      new Dish(0, "Spaghetti", false, "../assets/plate__spaghetti-meat-sauce.png"),
+      new Dish(1, "Bacon Eggs", false, "../../assets/plate__bacon-eggs.png"),
+      new Dish(2, "Chicken Salad", false, "../assets/plate__chicken-salad.png"),
+      new Dish(3, "Fish Sicks", false, "../assets/plate__fish-sticks-fries.png"),
+      new Dish(4, "French Fries", false, "../assets/plate__french-fries.png"),
+      new Dish(5, "Ravioli", false, "../assets/plate__ravioli.png"),
+      new Dish(6, "Salmon Vegetales", false, "../assets/plate__salmon-vegetables.png"),
+      new Dish(7, "Tortellini", false, "../assets/plate__tortellini.png"),
    ]
 
    public getDishes(): Dish[] {
@@ -35,12 +39,12 @@ export class Dish {
    private _image: string;
    private _quantity: number;
 
-   constructor(id: number, dishName: string, inCart: boolean) {
+   constructor(id: number, dishName: string, inCart: boolean, image:string) {
       this._id = id;
       this._dishName = dishName;
       this._inCart = inCart;
       this._price = getRandomPrice();
-      this._image = "https://via.placeholder.com/150";
+      this._image = image;
       this._quantity = 0;
    }
 
@@ -58,19 +62,20 @@ export class Dish {
       return this._id;
    }
 
+   get image(): string {
+      return this._image;
+   }
+
    get quantity(): number {
       return this._quantity;
    }
 
    private verifyInCart() {
-      this._inCart = this.quantity <= 0;
+      this._inCart = !(this.quantity <= 0);
    }
 }
 
 function getRandomPrice(): number {
    return Math.round(Math.random() * 100);
 }
-
-
-
 

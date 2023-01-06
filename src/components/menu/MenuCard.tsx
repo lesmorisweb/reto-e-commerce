@@ -11,7 +11,7 @@ export function MenuCard ({foodImg, foodName, price, isInCart, onAddToCart}:IDis
             <div className="foodInfo">
                 <h3>{foodName}</h3>
                 <Prices price={price}/>
-                <AddCartButton isEnabled={!isInCart} buttonClick={onAddToCart}/>
+                <AddCartButton isEnabled={!isInCart} />
             </div>
         </div>
     )

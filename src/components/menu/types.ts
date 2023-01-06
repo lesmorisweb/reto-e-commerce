@@ -3,7 +3,8 @@ export interface IDishMenu {
     foodName: string,
     price: number,
     isInCart: boolean,
-    onAddToCart: ()=> void,
-    onRemovFromCart: ()=> void
+    onAddToCart: (id:number)=> void,
+    onRemovFromCart: (id:number)=> void,
+    
 }
 
