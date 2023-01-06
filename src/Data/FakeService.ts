@@ -1,13 +1,13 @@
 export class Cart {
    private dishes: Dish[] = [
-      new Dish(0, "Spaghetti", false, "../assets/plate__spaghetti-meat-sauce.png"),
-      new Dish(1, "Bacon Eggs", false, "../../assets/plate__bacon-eggs.png"),
-      new Dish(2, "Chicken Salad", false, "../assets/plate__chicken-salad.png"),
-      new Dish(3, "Fish Sicks", false, "../assets/plate__fish-sticks-fries.png"),
-      new Dish(4, "French Fries", false, "../assets/plate__french-fries.png"),
-      new Dish(5, "Ravioli", false, "../assets/plate__ravioli.png"),
-      new Dish(6, "Salmon Vegetales", false, "../assets/plate__salmon-vegetables.png"),
-      new Dish(7, "Tortellini", false, "../assets/plate__tortellini.png"),
+      new Dish(0, "Spaghetti", false, "https://placeimg.com/210/180/any"),
+      new Dish(1, "Bacon Eggs", false, "https://placeimg.com/210/180/any"),
+      new Dish(2, "Chicken Salad", false, "https://placeimg.com/210/180/any"),
+      new Dish(3, "Fish Sicks", false, "https://placeimg.com/210/180/any"),
+      new Dish(4, "French Fries", false, "https://placeimg.com/210/180/any"),
+      new Dish(5, "Ravioli", false, "https://placeimg.com/210/180/any"),
+      new Dish(6, "Salmon Vegetales", false, "https://placeimg.com/210/180/any"),
+      new Dish(7, "Tortellini", false, "https://placeimg.com/210/180/any"),
    ]
 
    public getDishes(): Dish[] {
