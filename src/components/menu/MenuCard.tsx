@@ -1,12 +1,18 @@
-import { IMenu } from "./IMenuCard";
+import { AddCartButton } from "../global/buttons/addCartButton/AddCartButton";
+import { Prices } from "../global/labels/price/Price";
+import { IDishMenu } from "./types";
 
-export function MenuCard ({button, image, price, title}:IMenu){
+export function MenuCard ({foodImg, foodName, price, isInCart, onAddToCart}:IDishMenu){
     return (
-        <div className="menuCard">
-            <img src={image}></img>
-            <h3>{title}</h3>
-            <h2>${price}</h2>
-            <button>{button}</button>
+        <div className="menuDishCard">
+            <div className="foodImage">
+                <img src={foodImg}></img>
+            </div>
+            <div className="foodInfo">
+                <h3>{foodName}</h3>
+                <Prices price={price}/>
+                <AddCartButton isEnabled={!isInCart} buttonClick={onAddToCart}/>
+            </div>
         </div>
     )
 }

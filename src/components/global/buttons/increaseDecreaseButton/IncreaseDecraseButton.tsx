@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import { IInreaseDecreaseButton } from "./Types";
+import { IInreaseDecreaseButton } from "./types";
 
-export function IncreaseDecreaseButton ({clickFunction, direction, isEnabled}:IInreaseDecreaseButton){
+export function IncreaseDecreaseButton ({buttonClick, direction, isEnabled}:IInreaseDecreaseButton){
 
     const [icon, setIcon] = useState ("")
 
@@ -14,7 +14,7 @@ export function IncreaseDecreaseButton ({clickFunction, direction, isEnabled}:II
     },[direction])
 
     return (
-        <button disabled={!isEnabled} onClick={clickFunction}>
+        <button disabled={!isEnabled} onClick={buttonClick}>
             <img src={icon}></img>
         </button>
     )
