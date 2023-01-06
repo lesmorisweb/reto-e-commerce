@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
 import "./App.css";
+import { YourCart } from "./components/cart/cartItem/Cart";
 import { MenuCard } from "./components/menu/MenuCard";
 import { Cart, Dish } from "./Data/FakeService";
 
 function App() {
-  // Me ayudaron
   const [cart, setCart] = useState(new Cart());
   const [menuDishes, setMenuDishes] = useState<Dish[]>();
+  const [buyCart, setBuyCart] = useState<Dish[]>();
 
   useEffect(() => {
     setMenuDishes(cart.getDishes());
@@ -17,10 +18,10 @@ function App() {
   }, [menuDishes]);
 
   function addItemToCart(id: number) {
-    cart.addDish(id);
+    setBuyCart(cart.addDish(id));
   }
   function removeItemToCart(id: number) {
-    cart.removeDish(id);
+    setBuyCart(cart.removeDish(id));
   }
 
   return (
@@ -33,10 +34,17 @@ function App() {
               dish={dish}
               key={index}
               onAddToCart={addItemToCart}
-              onRemovFromCart={removeItemToCart}
-            />
+              onRemovFromCart={removeItemToCart}/>
           ))}
       </div>
-
-      </div>  )}
+      <div className="cart">
+          {
+            buyCart
+            && buyCart.map((dish, index) => <YourCart
+            dish={dish}
+              deleteDish={removeItemToCart} 
+              buttonClick={addItemToCart}/>)
+          }
+      </div>     
+    </div>  )}
 export default App

@@ -1,5 +1,6 @@
 export interface ICartImage{
+    id:number,
     numb?: number,
     img: string,
-    deleteDish: ()=> void
+    deleteDish: (id: number)=> void
 }

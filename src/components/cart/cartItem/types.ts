@@ -1,9 +1,7 @@
+import { Dish } from "../../../Data/FakeService";
+
 export interface IYourCart{
-    img: string,
-    title: string,
-    price: number,
-    numberDishes: number,
-    totalPrice: number
-    deleteDish: ()=> void,
-    buttonClick: ()=> void
+    dish: Dish,
+    deleteDish: (id:number)=> void,
+    buttonClick: (id:number)=>void
 }

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { ICartImage } from "./types";
 
-export function CartImg ({img, numb, deleteDish}:ICartImage){
+export function CartImg ({id, img, numb, deleteDish}:ICartImage){
 
     const [isEmptyCart, setIsEmptyCart] = useState <boolean>(false)
     const [numberToDisplay, setNumberToDisplay] = useState(numb)
@@ -19,7 +19,7 @@ export function CartImg ({img, numb, deleteDish}:ICartImage){
         <div>
             <img src={img}/>
             { !isEmptyCart &&<h3>{numberToDisplay}</h3>}
-            { isEmptyCart &&<img onClick={deleteDish} src="./assets/garbage" alt="delete item from cart" />}
+            { isEmptyCart &&<img onClick={()=>deleteDish(id)} src="./assets/garbage" alt="delete item from cart" />}
         </div>
     )
 }
