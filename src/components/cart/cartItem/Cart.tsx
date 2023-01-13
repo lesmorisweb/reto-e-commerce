@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
+import { Dish } from "../../../Data/FakeService";
 import { IncreaseDecreaseButton } from "../../global/buttons/increaseDecreaseButton/IncreaseDecraseButton";
 import { Prices } from "../../global/labels/price/Price";
 import { CartImg } from "../cartImage/CartImage";
 import { IYourCart } from "./types";
+import "./"
 
 export function YourCart ({dish, deleteDish, buttonClick}:IYourCart){
     
@@ -22,14 +24,16 @@ export function YourCart ({dish, deleteDish, buttonClick}:IYourCart){
             </div>
             <div className="buySection">
                 <IncreaseDecreaseButton 
-                buttonClick={()=>deleteDish(dish.id)} 
+                onarrowAcction={()=>deleteDish(dish.id)} 
                 direction={"remove"} 
-                isEnabled = {enabledButton}/>
+                isEnabled = {enabledButton}
+                id = {dish.id}/>
                 <h5>{dish.quantity}</h5>
                 <IncreaseDecreaseButton 
-                buttonClick={()=>buttonClick(dish.id)} 
+                onarrowAcction={()=>buttonClick(dish.id)} 
                 direction={"add"} 
-                isEnabled = {enabledButton}/>
+                isEnabled = {enabledButton}
+                id = {dish.id}/>
                 <Prices price={dish.price * dish.quantity}/>
             </div>
         </div>

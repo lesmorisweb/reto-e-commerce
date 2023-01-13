@@ -19,7 +19,7 @@ export function CartImg ({id, img, numb, deleteDish}:ICartImage){
         <div>
             <img src={img}/>
             { !isEmptyCart &&<h3>{numberToDisplay}</h3>}
-            { isEmptyCart &&<img onClick={()=>deleteDish(id)} src="./assets/garbage" alt="delete item from cart" />}
+            { isEmptyCart &&<img onClick={()=>deleteDish(id)} src=".cartImage/assets/garbage" alt="delete item from cart" />}
         </div>
     )
 }

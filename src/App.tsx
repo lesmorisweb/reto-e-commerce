@@ -26,6 +26,10 @@ function App() {
 
   return (
     <div className="App">
+      <div className="background">
+        <img src="./src/assets/bg__left.svg" alt="bg-left" className="derecha" />
+        <img src="./src/assets/bg__top-right.svg" alt="bg-top-right" className="superior-izquierda" />
+      </div>
       <div className="menu">
         <h2>Go To Menu</h2>
         {menuDishes &&
@@ -38,6 +42,7 @@ function App() {
           ))}
       </div>
       <div className="cart">
+        <h2>Your Cart</h2>
           {
             buyCart
             && buyCart.map((dish, index) => <YourCart
