@@ -1,0 +1,82 @@
+.cartComponent {
+  display: flex;
+  flex-direction: row;
+  border: 1px solid royalblue;
+  margin: 20px;
+  padding: 20px;
+}
+
+.imageContainerCart {
+  border-radius: 50%;
+  height: 100px;
+  width: 100px;
+  margin: 20px;
+  position: relative;
+  align-items: flex-start;
+}
+
+img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.cardimg {
+  position: absolute;
+  z-index: -1;
+  left: 1px;
+}
+
+.spanQuantity {
+  position: relative;
+  background-color: rgb(49, 47, 47);
+  border-radius: 50%;
+  border: 2px solid whitesmoke;
+  margin: 5px;
+  padding: 5px 10px;
+  top: 40px;
+  font-weight: bolder;
+}
+
+.infoContainer {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  text-align: left;
+}
+
+.buttonsSection {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+  margin: 10px;
+}
+
+.increaseDecreaseButton {
+  background-color: rgb(47, 50, 85);
+  height: 40px;
+  border-radius: 50%;
+  width: 40px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 5px;
+  margin: 5px;
+}
+
+.quantityCart {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 5px;
+  padding: 5px;
+  font-size: x-large;
+}
+
+.totalPrice {
+  font-size: x-large;
+  font-size: xx-large;
+  font-weight: bold;
+}
