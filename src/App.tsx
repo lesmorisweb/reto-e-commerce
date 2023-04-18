@@ -37,7 +37,9 @@ function App() {
     }
     const temporalArray: ICard[] = arrayCartCards.slice();
 
-    if ((temporalArray.indexOf((element) => element.id) === id) !== -1) {
+    const filterIndex = temporalArray.findIndex((element) => element.id === id);
+
+    if (filterIndex === -1) {
       temporalArray.push({
         id: arrayMenuCard[foundItemIndex].id,
         image: arrayMenuCard[foundItemIndex].image,
